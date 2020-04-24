@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+wealth-spring-boot-solace-jms-direct-consumer,com.cgi.wealth.dp.solace.demo,WealthSpringBootSolaceJmsDirectConsumerApplication,5,3,0,0,2,1,1,1,1,1
+wealth-spring-boot-solace-jms-direct-consumer,com.cgi.wealth.dp.solace.demo.integration.handler,MessageHandler,82,7,4,0,13,2,3,2,1,2
+wealth-spring-boot-solace-jms-direct-consumer,com.cgi.wealth.dp.solace.demo.integration.handler,ConsumerErrorHandler,40,7,0,0,10,2,1,2,1,2
+wealth-spring-boot-solace-jms-direct-consumer,com.cgi.wealth.dp.solace.demo.config,ConsumerConfiguration,0,19,0,0,0,6,0,2,0,2
