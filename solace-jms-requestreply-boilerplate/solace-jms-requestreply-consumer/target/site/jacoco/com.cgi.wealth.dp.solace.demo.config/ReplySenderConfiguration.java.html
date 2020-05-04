@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReplySenderConfiguration.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">wealth-spring-boot-solace-jms-requestreply-consumer</a> &gt; <a href="index.source.html" class="el_package">com.cgi.wealth.dp.solace.demo.config</a> &gt; <span class="el_source">ReplySenderConfiguration.java</span></div><h1>ReplySenderConfiguration.java</h1><pre class="source lang-java linenums">package com.cgi.wealth.dp.solace.demo.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.connection.CachingConnectionFactory;
+import org.springframework.jms.core.JmsTemplate;
+
+import javax.jms.ConnectionFactory;
+
+/**
+ * The type Reply sender configuration.
+ */
+@Configuration
+public class ReplySenderConfiguration {
+
+    private final ConnectionFactory connectionFactory;
+
+	/**
+	 * Instantiates a new Producer configuration.
+	 *
+	 * @param connectionFactory the connection factory
+	 */
+<span class="fc" id="L23">	public ReplySenderConfiguration(ConnectionFactory connectionFactory) {</span>
+<span class="fc" id="L24">		this.connectionFactory = connectionFactory;</span>
+<span class="fc" id="L25">	}</span>
+
+	/**
+	 * Jms template jms template.
+	 *
+	 * @return the jms template
+	 */
+// Example use of CachingConnectionFactory for the producer
+	@Bean
+	public JmsTemplate jmsTemplate() {
+<span class="fc" id="L35">		CachingConnectionFactory ccf = new CachingConnectionFactory(connectionFactory);</span>
+<span class="fc" id="L36">		JmsTemplate jt = new JmsTemplate(ccf);</span>
+<span class="fc" id="L37">		return jt;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

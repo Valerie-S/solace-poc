@@ -1,0 +1,5 @@
+com\cgi\wealth\dp\solace\demo\config\ConsumerConfiguration.class
+com\cgi\wealth\dp\solace\demo\config\ReplySenderConfiguration.class
+com\cgi\wealth\dp\solace\demo\integration\handler\ConsumerErrorHandler.class
+com\cgi\wealth\dp\solace\demo\integration\handler\MessageHandler.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPubsubConsumerApplication.class

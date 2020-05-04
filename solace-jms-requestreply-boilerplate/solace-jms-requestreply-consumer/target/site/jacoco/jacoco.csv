@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+wealth-spring-boot-solace-jms-requestreply-consumer,com.cgi.wealth.dp.solace.demo,WealthSpringBootSolaceJmsPubsubConsumerApplication,5,3,0,0,2,1,1,1,1,1
+wealth-spring-boot-solace-jms-requestreply-consumer,com.cgi.wealth.dp.solace.demo.integration.handler,MessageHandler,44,7,0,0,8,2,1,2,1,2
+wealth-spring-boot-solace-jms-requestreply-consumer,com.cgi.wealth.dp.solace.demo.integration.handler,ConsumerErrorHandler,36,7,0,0,9,2,1,2,1,2
+wealth-spring-boot-solace-jms-requestreply-consumer,com.cgi.wealth.dp.solace.demo.config,ConsumerConfiguration,0,15,0,0,0,5,0,2,0,2
+wealth-spring-boot-solace-jms-requestreply-consumer,com.cgi.wealth.dp.solace.demo.config,ReplySenderConfiguration,0,19,0,0,0,6,0,2,0,2

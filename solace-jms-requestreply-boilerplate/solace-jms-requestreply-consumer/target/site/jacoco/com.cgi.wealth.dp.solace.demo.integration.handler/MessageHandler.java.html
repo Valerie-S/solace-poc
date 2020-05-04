@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MessageHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">wealth-spring-boot-solace-jms-requestreply-consumer</a> &gt; <a href="index.source.html" class="el_package">com.cgi.wealth.dp.solace.demo.integration.handler</a> &gt; <span class="el_source">MessageHandler.java</span></div><h1>MessageHandler.java</h1><pre class="source lang-java linenums">package com.cgi.wealth.dp.solace.demo.integration.handler;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.jms.listener.SessionAwareMessageListener;
+import javax.jms.Session;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageProducer;
+
+
+/**
+ * The type Message handler.
+ */
+@Component
+<span class="fc" id="L18">public class MessageHandler implements SessionAwareMessageListener&lt;Message&gt;{</span>
+
+<span class="fc" id="L20">    private static final Logger logger = LoggerFactory.getLogger(MessageHandler.class);</span>
+
+
+    /**
+     * On message.
+     *
+     * @param msg        the msg
+     * @param session    the session
+     * @throws JMSException the jms exception
+     */
+    /* Retrieve the name of the queue from the application.properties file
+     * Modify the number of concurrencies to enable multi-threading
+     * To consume messages from all threads, go to the Queue tab in Solace admin UI 
+     * and change the access type of your queue to Non-exclusive
+     */
+    @JmsListener(destination = &quot;${solace.jms.sendQueue}&quot;, containerFactory = &quot;cFactory&quot;, selector = &quot;&quot;,  concurrency = &quot;1&quot;)
+    public void onMessage(Message msg, Session session) throws JMSException {
+<span class="nc" id="L37">        Message replyMsg = session.createMessage();</span>
+<span class="nc" id="L38">        replyMsg.setJMSCorrelationID(msg.getJMSCorrelationID());</span>
+<span class="nc" id="L39">        String replyContent = &quot;Received message &quot; + msg.getJMSCorrelationID() + &quot;. Sending the response.&quot;;</span>
+<span class="nc" id="L40">        replyMsg.setStringProperty(&quot;response&quot;, replyContent);</span>
+
+        // send responses with a new producer everytime when the listener receives a new message
+<span class="nc" id="L43">        final MessageProducer producer = session.createProducer(msg.getJMSReplyTo());</span>
+<span class="nc" id="L44">        logger.info(&quot;Sending reply message to queue &quot; + String.valueOf(msg.getJMSReplyTo()));</span>
+        
+<span class="nc" id="L46">        producer.send(replyMsg);</span>
+<span class="nc" id="L47">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
