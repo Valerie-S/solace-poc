@@ -1,0 +1,4 @@
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPtpConsumerApplication.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPtpConsumerConfiguration$DemoErrorHandler.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPtpConsumerConfiguration.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPtpConsumerApplication$MessageHandler.class
