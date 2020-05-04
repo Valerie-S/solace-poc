@@ -1,0 +1,5 @@
+com\cgi\wealth\dp\solace\demo\integration\service\MessageProducer.class
+com\cgi\wealth\dp\solace\demo\config\ProductionConfiguration.class
+com\cgi\wealth\dp\solace\demo\integration\service\BaseMessageProducer.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsPubsubProducerApplication.class
+com\cgi\wealth\dp\solace\demo\web\MessageController.class

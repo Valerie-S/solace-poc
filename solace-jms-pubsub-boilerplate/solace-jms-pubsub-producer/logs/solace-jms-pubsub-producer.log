@@ -1,0 +1,15 @@
+2020-04-22 17:21:32,530  INFO 5752 --- [main] ngBootSolaceJmsPubsubProducerApplication : Starting WealthSpringBootSolaceJmsPubsubProducerApplication on CA-LFBJ53Z2 with PID 5752 (C:\Users\valerie.liu\Downloads\cgi-wealth-spring-boot-solace\solace-jms-pubsub-boilerplate\solace-jms-pubsub-producer\target\classes started by valerie.liu in C:\Users\valerie.liu\Downloads\cgi-wealth-spring-boot-solace\solace-jms-pubsub-boilerplate\solace-jms-pubsub-producer)
+2020-04-22 17:21:32,540  INFO 5752 --- [main] ngBootSolaceJmsPubsubProducerApplication : No active profile set, falling back to default profiles: default
+2020-04-22 17:21:33,865  INFO 5752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10012 (http)
+2020-04-22 17:21:33,872  INFO 5752 --- [main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-10012"]
+2020-04-22 17:21:33,872  INFO 5752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-22 17:21:33,873  INFO 5752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-22 17:21:33,994  INFO 5752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-22 17:21:33,995  INFO 5752 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1418 ms
+2020-04-22 17:21:34,234  INFO 5752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-22 17:21:34,379  INFO 5752 --- [main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-10012"]
+2020-04-22 17:21:34,398  INFO 5752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10012 (http) with context path ''
+2020-04-22 17:21:34,401  INFO 5752 --- [main] ngBootSolaceJmsPubsubProducerApplication : Started WealthSpringBootSolaceJmsPubsubProducerApplication in 2.196 seconds (JVM running for 2.565)
+2020-04-22 17:21:34,466  INFO 5752 --- [main] c.s.j.protocol.impl.TcpClientChannel     : Connecting to host 'orig=tcp://localhost:55555, scheme=tcp://, host=localhost, port=55555' (host 1 of 1, smfclient 2, attempt 1 of 1, this_host_attempt: 1 of 1)
+2020-04-22 17:21:34,482  INFO 5752 --- [main] c.s.j.protocol.impl.TcpClientChannel     : Connected to host 'orig=tcp://localhost:55555, scheme=tcp://, host=localhost, port=55555' (smfclient 2)
+2020-04-22 17:21:48,684  INFO 5752 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
