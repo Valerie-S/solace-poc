@@ -1,0 +1,6 @@
+com\cgi\wealth\dp\solace\demo\integration\service\MessageProducer.class
+com\cgi\wealth\dp\solace\demo\config\ReplyReceiverConfiguration.class
+com\cgi\wealth\dp\solace\demo\integration\service\ConsumerErrorHandler.class
+com\cgi\wealth\dp\solace\demo\integration\service\MessageHandler.class
+com\cgi\wealth\dp\solace\demo\WealthSpringBootSolaceJmsRequestreplyProducerApplication.class
+com\cgi\wealth\dp\solace\demo\config\ProducerConfiguration.class

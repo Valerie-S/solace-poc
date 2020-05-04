@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReplyReceiverConfiguration.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">wealth-spring-boot-solace-jms-requestreply-producer</a> &gt; <a href="index.source.html" class="el_package">com.cgi.wealth.dp.solace.demo.config</a> &gt; <span class="el_source">ReplyReceiverConfiguration.java</span></div><h1>ReplyReceiverConfiguration.java</h1><pre class="source lang-java linenums">package com.cgi.wealth.dp.solace.demo.config;
+
+import com.cgi.wealth.dp.solace.demo.integration.service.ConsumerErrorHandler;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import javax.jms.ConnectionFactory;
+
+/**
+ * The type Consumer configuration.
+ */
+@EnableJms
+@Configuration
+<span class="fc" id="L15">public class ReplyReceiverConfiguration {</span>
+
+    /**
+     * C factory default jms listener container factory.
+     *
+     * @param connectionFactory the connection factory
+     * @param errorHandler      the error handler
+     * @return the default jms listener container factory
+     */
+    @Bean
+    public DefaultJmsListenerContainerFactory cFactory(ConnectionFactory connectionFactory, ConsumerErrorHandler errorHandler) {
+<span class="fc" id="L26">        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();</span>
+<span class="fc" id="L27">        factory.setConnectionFactory(connectionFactory);</span>
+<span class="fc" id="L28">        factory.setErrorHandler(errorHandler);</span>
+<span class="fc" id="L29">        factory.setPubSubDomain(false);</span>
+<span class="fc" id="L30">        return factory;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
