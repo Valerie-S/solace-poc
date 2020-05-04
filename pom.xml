@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cgi.wealth</groupId>
+    <artifactId>wealth-spring-boot-solace</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://w360tm1.mdc.cginet:8081/repository/w360-tp-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://w360tm1.mdc.cginet:8081/repository/w360-tp-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <modules>
+        <module>solace-jms-ptp-boilerplate/solace-jms-ptp-consumer</module>
+        <module>solace-jms-ptp-boilerplate/solace-jms-ptp-producer</module>
+        <module>solace-jms-pubsub-boilerplate/solace-jms-pubsub-consumer</module>
+        <module>solace-jms-pubsub-boilerplate/solace-jms-pubsub-producer</module>
+        <module>solace-jms-direct-boilerplate/solace-jms-direct-consumer</module>
+        <module>solace-jms-direct-boilerplate/solace-jms-direct-producer</module>
+        <module>solace-jms-requestreply-boilerplate/solace-jms-requestreply-consumer</module>
+        <module>solace-jms-requestreply-boilerplate/solace-jms-requestreply-producer</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <!-- Release Plugin -->
+            <plugin>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>1.14.0</version>
+                <configuration>
+                    <!-- optional configuration -->
+                    <!-- https://github.com/aleksandr-m/gitflow-maven-plugin -->
+                    <verbose>true</verbose>
+                    <gitFlowConfig>
+                        <productionBranch>master</productionBranch>
+                        <developmentBranch>develop</developmentBranch>
+                    </gitFlowConfig>
+                    <commitMessages>
+                        <releaseStartMessage>release: cut the @{version} release</releaseStartMessage>
+                        <releaseFinishMessage>chore: prepare @{version} for development</releaseFinishMessage>
+                        <tagReleaseMessage>tag release</tagReleaseMessage>
+                    </commitMessages>
+
+                    <!-- To put in the build server mvn -B gitflow:release -DreleaseRebase=true -DpostReleaseGoals=deploy -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

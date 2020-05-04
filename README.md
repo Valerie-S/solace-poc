@@ -1,1 +1,1 @@
-# solace-poc
+cgi-wealth-spring-boot-solace
